@@ -3,6 +3,9 @@ import Todolist from "./Todolist";
 
 function App() {
   const [todos,setTodos] = useState([{id:1,name:"Todo1",completed:false}]);
+  const handleAddTodo = () => {
+    //タスクを追加する
+  }
   return (
     <div>
       {//{}内のtodosがconstで定義している変数
@@ -10,7 +13,7 @@ function App() {
       }
       <Todolist todos={todos}/> 
       <input type="text" />
-      <button>追加</button>
+      <button onClick={handleAddTodo}>追加</button>
       <button>完了済みの削除</button>
       <div>残りのタスク:0</div>
     </div>
