@@ -2,7 +2,7 @@ import { useState } from "react";
 import Todolist from "./Todolist";
 
 function App() {
-  const [todos,setTodos] = useState(["Todo1","Todo2"]);
+  const [todos,setTodos] = useState([{id:1,name:"Todo1",completed:false}]);
   return (
     <div>
       {//{}内のtodosがconstで定義している変数
