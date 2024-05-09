@@ -16,12 +16,20 @@ function App() {
     todoNameRef.current.value = null;
   };
 
+
+  const toggleTodo = (id) => {
+    const newTodos = [...todos];
+    const todo = newTodos.find((todo) => todo.id === id);
+    todo.completed = !todo.completed;
+    setTodos(newTodos);
+  };
+
   return (
     <div>
       {//{}内のtodosがconstで定義している変数
       //それをTodolist.jsファイルにtodosという名前で渡しますよという処理
       }
-      <Todolist todos={todos}/> 
+      <Todolist todos={todos} toggleTodo = {toggleTodo} /> 
       <input type="text" ref={todoNameRef}/>
       <button onClick={handleAddTodo}>追加</button>
       <button>完了済みの削除</button>
