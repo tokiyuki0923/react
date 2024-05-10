@@ -16,7 +16,6 @@ function App() {
     todoNameRef.current.value = null;
   };
 
-
   const toggleTodo = (id) => {
     const newTodos = [...todos];
     const todo = newTodos.find((todo) => todo.id === id);
