@@ -30,7 +30,9 @@ const handleClear = () =>{
 
   return (
     <div>
-      {//{}内のtodosがconstで定義している変数
+      {
+      //コンポーネントは一つのタグをreturnすることはできない。だから複数返したいときは、divタグだったり、React.fragmentタグで囲う必要がある
+      //{}内のtodosがconstで定義している変数
       //それをTodolist.jsファイルにtodosという名前で渡しますよという処理
       //以下のような記法（JSの中にHTMLがある記法）をJSXという
       }
