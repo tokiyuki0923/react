@@ -10,6 +10,7 @@ function App() {
   const handleAddTodo = () => {
     //タスクを追加する
     const name = todoNameRef.current.value;
+    if(name === "")return;
     setTodos((prevTodos) => {
       return[...prevTodos,{ id: uuidv4(), name:name, completed:false }];
     });
@@ -23,6 +24,11 @@ function App() {
     setTodos(newTodos);
   };
 
+const handleClear = () =>{
+  const newTodos = todos.filter((todo) => !todo.completed);
+  setTodos(newTodos);
+}
+
   return (
     <div>
       {//{}内のtodosがconstで定義している変数
@@ -31,7 +37,7 @@ function App() {
       <Todolist todos={todos} toggleTodo = {toggleTodo} /> 
       <input type="text" ref={todoNameRef}/>
       <button onClick={handleAddTodo}>追加</button>
-      <button>完了済みの削除</button>
+      <button onClick={handleClear}>完了済みの削除</button>
       <div>残りのタスク:{todos.filter((todo) => !todo.completed).length}</div>
     </div>
   );
