@@ -33,6 +33,7 @@ const handleClear = () =>{
     <div>
       {//{}内のtodosがconstで定義している変数
       //それをTodolist.jsファイルにtodosという名前で渡しますよという処理
+      //以下のような記法（JSの中にHTMLがある記法）をJSXという
       }
       <Todolist todos={todos} toggleTodo = {toggleTodo} /> 
       <input type="text" ref={todoNameRef}/>
