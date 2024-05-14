@@ -28,6 +28,7 @@ const handleClear = () =>{
   setTodos(newTodos);
 }
 
+
   return (
     <div>
       {
