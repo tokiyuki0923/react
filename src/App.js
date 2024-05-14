@@ -44,4 +44,5 @@ const handleClear = () =>{
     </div>
   );
 }
+
 export default App;
