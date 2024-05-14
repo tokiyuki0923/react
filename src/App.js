@@ -48,3 +48,4 @@ const handleClear = () =>{
 
 export default App;
 //export defaultとexportの違いはコンポーネントを一つだけエクスポートするのか、複数エクスポートするのかという違い。書き方も違いがあり、defaultの場合は一つしかエクスポートしないので{}で囲む必要がない
+//あと、エイリアスでインポートすることができる
