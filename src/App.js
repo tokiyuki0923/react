@@ -3,8 +3,8 @@ import Todolist from "./Todolist";
 import {v4 as uuidv4} from "uuid"
 
 function App() {//Appコンポーネントを定義
-  const [todos,setTodos] = useState([]);
-  const todoNameRef =useRef();
+  const [todos,setTodos] = useState([]);//useStateは状態を管理するAPI。todosとその状態を更新するsetTodosという変数（状態）を定義する。そして初期値は空の配列
+  const todoNameRef =useRef();//useRefで要素に対する参照を保持する。それをtodoNameRefと定義する
 
   const handleAddTodo = () => {
     //タスクを追加する
