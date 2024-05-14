@@ -7,7 +7,7 @@ root.render(
   <React.StrictMode>
     <App />
     {
-      //ここでApp.jsの関数Appをstrictmodeで起動している
+      //ここでApp.jsのAppコンポーネントをstrictmodeで起動している
     }
   </React.StrictMode>
 );

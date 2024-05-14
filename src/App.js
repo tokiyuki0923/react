@@ -2,7 +2,7 @@ import { useState,useRef } from "react";
 import Todolist from "./Todolist";
 import {v4 as uuidv4} from "uuid"
 
-function App() {
+function App() {//Appコンポーネントを定義
   const [todos,setTodos] = useState([]);
   const todoNameRef =useRef();
 
