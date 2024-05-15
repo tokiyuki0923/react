@@ -2,7 +2,7 @@ import { useState,useRef } from "react";
 import Todolist from "./Todolist";//同じ階層のTodolist.jsファイルからTodolistコンポーネントをインポートする
 import {v4 as uuidv4} from "uuid"
 
-function App() {//Appコンポーネントを定義
+function App() {//Appコンポーネントを定義して実行。おそらく、素のJSと違ってわざわざ実行するための関数を書かなくてもfunctionで定義したらそのまま実行してくれるのかな
   const [todos,setTodos] = useState([]);//useStateは状態を管理するAPI。todosとその状態を更新するsetTodosという変数（状態）を定義する。そして初期値は空の配列
   const todoNameRef =useRef();//useRefで要素に対する参照を保持する。それをtodoNameRefと定義する
 
