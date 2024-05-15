@@ -16,11 +16,13 @@ function App() {//Appコンポーネントを定義して実行。おそらく�
     todoNameRef.current.value = null;//追加した後、input属性の値を空にする
   };
 
+
+  //全体的にこのtoggleTodoで行われていることがマジで意味わからない。
   const toggleTodo = (id) => {
     const newTodos = [...todos];//todosは状態変数の状態だから、それをいじるのはあまり好ましくないため、todosをnewTodosという変数にコピーする。（インスタンスを作成しているようなものかな？）
-    const todo = newTodos.find((todo) => todo.id === id);
-    todo.completed = !todo.completed;
-    setTodos(newTodos);
+    const todo = newTodos.find((todo) => todo.id === id);//（toggleTodo関数においての）todoはnewTodosの中からfind関数に適合したものとする。（ここが結構意味わからない）
+    todo.completed = !todo.completed;//todoがcompletedだった場合（つまりfalseであり、チェックがついていない状態）、反転させる（つまりcheck状態にする）。
+    setTodos(newTodos);//newTodosをsetTodosに入れてあげる
   };
 
 const handleClear = () =>{
