@@ -26,7 +26,7 @@ function App() {//Appコンポーネントを定義して実行。おそらく�
   };
 
 const handleClear = () =>{
-  const newTodos = todos.filter((todo) => !todo.completed);
+  const newTodos = todos.filter((todo) => !todo.completed);//check状態ではないのtodoを見つけ出す
   setTodos(newTodos);
 }
 
@@ -45,7 +45,9 @@ const handleClear = () =>{
       <input type="text" ref={todoNameRef}/>
       <button onClick={handleAddTodo}>追加</button>
       <button onClick={handleClear}>完了済みの削除</button>
-      <div>残りのタスク:{todos.filter((todo) => !todo.completed).length}</div>
+      <div>残りのタスク:{todos.filter((todo) => !todo.completed).length}</div>{
+        //書くのめんどくさいけど理解した、そういうことか。Todo.jsのcheckedの状態を見ればわかる
+      }
     </div>
   );
 }
