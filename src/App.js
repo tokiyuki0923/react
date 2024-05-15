@@ -4,20 +4,20 @@ import {v4 as uuidv4} from "uuid"
 
 function App() {//Appコンポーネントを定義して実行。おそらく、素のJSと違ってわざわざ実行するための関数を書かなくてもfunctionで定義したらそのまま実行してくれるのかな
   const [todos,setTodos] = useState([]);//useStateは状態を管理するAPI。todosとその状態を更新するsetTodosという変数（状態）を定義する。そして初期値は空の配列
-  const todoNameRef =useRef();//useRefで要素に対する参照を保持する。それをtodoNameRefと定義する
+  const todoNameRef =useRef();//useRefで要素に対する参照を保持する。つまり今回はinputタグを参照している。それをtodoNameRefと定義する
 
   const handleAddTodo = () => {//これなんで関数なのにfunctionで定義しないんだろう。なぜ変数として定義しているんだろう。コンポーネントを定義する時はfunctionで関数を定義する時はconstにしているのか？
     //タスクを追加する処理を定義
-    const name = todoNameRef.current.value;
-    if(name === "")return;
-    setTodos((prevTodos) => {
-      return[...prevTodos,{ id: uuidv4(), name:name, completed:false }];
+    const name = todoNameRef.current.value;//参照したinputのcurrentの中身のvalueをnameと定義
+    if(name === "")return;//もし空文字だったら何も返さない
+    setTodos((prevTodos) => {//現在存在しているタスクをprevTodosとする
+      return[...prevTodos,{ id: uuidv4(), name:name, completed:false }];//prevTodosの後に{}の情報を持ったオブジェクトを追加する
     });
-    todoNameRef.current.value = null;
+    todoNameRef.current.value = null;//追加した後、input属性の値を空にする
   };
 
   const toggleTodo = (id) => {
-    const newTodos = [...todos];
+    const newTodos = [...todos];//todosは状態変数の状態だから、それをいじるのはあまり好ましくないため、todosをnewTodosという変数にコピーする。（インスタンスを作成しているようなものかな？）
     const todo = newTodos.find((todo) => todo.id === id);
     todo.completed = !todo.completed;
     setTodos(newTodos);
