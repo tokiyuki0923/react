@@ -1,5 +1,5 @@
 import React from 'react';
-import Todo from "./Todo";
+import Todo from "./Todo";//Todo.jsからTodoコンポーネントを受け取っている
 const Todolist = ({todos,toggleTodo}) => {
     {
         //todosというpropsを受け取り、その中身をmap関数で処理してTodoというコンポーネントに入れている

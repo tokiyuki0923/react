@@ -6,7 +6,7 @@ function App() {//Appコンポーネントを定義して実行。おそらく�
   const [todos,setTodos] = useState([]);//useStateは状態を管理するAPI。todosとその状態を更新するsetTodosという変数（状態）を定義する。そして初期値は空の配列
   const todoNameRef =useRef();//useRefで要素に対する参照を保持する。それをtodoNameRefと定義する
 
-  const handleAddTodo = () => {//これなんで関数なのにfunctionで定義しないんだろう。なぜ変数として定義しているんだろう。
+  const handleAddTodo = () => {//これなんで関数なのにfunctionで定義しないんだろう。なぜ変数として定義しているんだろう。コンポーネントを定義する時はfunctionで関数を定義する時はconstにしているのか？
     //タスクを追加する処理を定義
     const name = todoNameRef.current.value;
     if(name === "")return;
