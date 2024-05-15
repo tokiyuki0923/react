@@ -1,5 +1,5 @@
 import { useState,useRef } from "react";
-import Todolist from "./Todolist";
+import Todolist from "./Todolist";//同じ階層のTodolist.jsファイルからTodolistコンポーネントをインポートする
 import {v4 as uuidv4} from "uuid"
 
 function App() {//Appコンポーネントを定義
@@ -36,6 +36,8 @@ const handleClear = () =>{
       //{}内のtodosがconstで定義している変数
       //それをTodolist.jsファイルにtodosという名前で渡しますよという処理
       //以下のような記法（JSの中にHTMLがある記法）をJSXという
+
+      //Todolist.jsファイルのTodolistコンポーネントを実行している
       }
       <Todolist todos={todos} toggleTodo = {toggleTodo} /> 
       <input type="text" ref={todoNameRef}/>
